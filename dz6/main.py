@@ -1,7 +1,7 @@
 from c_calc import Calc_block as c_calc
 from loggs import result_logger as write_log
 import data_mod as d_t
-import console_ui as c_ui
+import console as c_ui
 
 
 def button_click():

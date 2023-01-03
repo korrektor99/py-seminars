@@ -1,4 +1,4 @@
-import console_ui as c_ui
+import console as c_ui
 from fractions import Fraction
 import cmath
 from c_calc import Calc_block as c_calc
