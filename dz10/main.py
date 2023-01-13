@@ -46,7 +46,7 @@ def gameX(callBackData):
                     isCycleContinue = True
                     while (isCycleContinue):
                         rand = random.randint(0, 8)
-                        #бот занимает первым ходом середину если она
+                        #бот занимает первым ходом середину если она пустая
                         if   charList[rand] == ot.SYMBOL_UNDEF:
                             if charList[4] ==ot.SYMBOL_UNDEF  :
                                     charList[4]= ot.SYMBOL_O
@@ -99,7 +99,7 @@ def button(update, _):
     query = update.callback_query
     callbackData = query.data 
 
-    message, callbackData, alert = gameX(callbackData)  # игра
+    message, callbackData, alert = gameX(callbackData) пше 
     if alert is None:  
         query.answer()  
         query.edit_message_text(text=message, reply_markup=InlineKeyboardMarkup(getKeyboard(callbackData)))
@@ -116,8 +116,7 @@ if __name__ == '__main__':
     dispatcher=updater.dispatcher  
     dispatcher.add_handler(CommandHandler('start', newGame))
     dispatcher.add_handler(CommandHandler('new_game', newGame))
-    dispatcher.add_handler(CommandHandler('help', help_command))
-    dispatcher.add_handler(MessageHandler(Filters.text, help_command))  
+    dispatcher.add_handler(CommandHandler('help', help_command))  
     dispatcher.add_handler(CallbackQueryHandler(button))
     
 
